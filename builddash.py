@@ -169,3 +169,12 @@ def word(filename):
                 "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't",'1','2','3','4','5','6','7',
                 '8','9','0','.',',','/','!','@','#','$','%','^','&','*','(',')','+','-','media','omitted','media omitted','nan','message deleted'
                ]
+       
+        for stop in new_stop:
+            STOPWORDS.add(stop)
+
+        i = 0
+
+        comment_words = ' '
+        stopwords = set(STOPWORDS) 
+
