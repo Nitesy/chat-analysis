@@ -178,3 +178,22 @@ def word(filename):
         comment_words = ' '
         stopwords = set(STOPWORDS) 
 
+        
+    # iterate through the csv file 
+    for val in df['Messages']: 
+
+        # typecaste each val to string 
+        val = str(val) 
+
+        if "media omitted" in val:
+            i+=1
+        # split the value 
+        tokens = val.split() 
+
+        # Converts each token into lowercase 
+        for i in range(len(tokens)): 
+            tokens[i] = tokens[i].lower() 
+
+        for words in tokens: 
+            comment_words = comment_words + words + ' '
+
