@@ -197,3 +197,16 @@ def word(filename):
         for words in tokens: 
             comment_words = comment_words + words + ' '
 
+        
+
+    wordcloud = WordCloud(width = 1400, height = 800,
+                    background_color ='white', 
+                    stopwords = stopwords, 
+                    min_font_size = 10,
+                    max_font_size = 150,      
+                    colormap= 'plasma').generate(comment_words) 
+
+    plt.title("WORD CLOUD",fontsize=40)
+    plt.imshow(wordcloud) 
+    plt.axis("off") 
+    plt.savefig(os.path.join('static/images/dashboard',filename+'word.png') ,bbox_inches='tight')
